@@ -38,6 +38,7 @@ reports = store,graphite
 pluginsync = true
 report = true
 ```
+
 4.  Run Puppet on your master the usual way to get the report sync'ed
     as a plugin.
 
