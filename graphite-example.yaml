@@ -1,0 +1,4 @@
+---
+:host: 'graphite.example.com'
+:port: 2023
+:prefix: 'puppet.metrics'
