@@ -28,12 +28,11 @@ Installation & Usage
 3.  Enable `pluginsync` and reports in `puppet.conf` (for your master
     and your agents.) Add `graphite` to the `reports` setting. Your
     `puppet.conf` might look something like this:
-```conf
+```
 [master]
 pluginsync = true
 report = true
 reports = store,graphite
-
 [agent]
 pluginsync = true
 report = true
