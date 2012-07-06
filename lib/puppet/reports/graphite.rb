@@ -38,6 +38,8 @@ Puppet::Reports.register_report(:graphite) do
         path = [PREFIX, metric]
         data.values.each { |name, _, value|
           path << name
+          debug = [path.join('.'), value, timestamp].join(' ')
+          Puppet.debug "Sending: '#{debug}'"
           graphite.puts([path.join('.'), value, timestamp].join(' '))
           path.pop()
         }
