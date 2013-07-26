@@ -1,6 +1,6 @@
 ### -*- coding: utf-8 -*-
 ###
-### © 2012 Krux Digital, Inc.
+### © 2012, 2013 Krux Digital, Inc.
 ### This software is provided under the MIT License
 ###
 ### Author: Paul Lathrop <paul@krux.com>
@@ -19,9 +19,9 @@ Puppet::Reports.register_report(:graphite) do
   ### Get the path to the config file. This will be
   ### <puppet_config_dir>/graphite.yaml (/etc/puppet/graphite.yaml by
   ### default).
-  config_file = File.join([File.dirname(Puppet.settings[:config]), "graphite.yaml"])
-  raise(Puppet::ParseError, "Graphite report config file #{configfile} unreadable!") unless File.exists?(configfile)
-  config = YAML.load_file(configfile)
+  @configfile = File.join([File.dirname(Puppet.settings[:config]), "graphite.yaml"])
+  raise(Puppet::ParseError, "Graphite report config file #{@configfile} unreadable!") unless File.exists?(configfile)
+  config = YAML.load_file(@configfile)
   HOST = config[:host]
   PORT = config[:port]
   PREFIX = config[:prefix] || 'puppet'
