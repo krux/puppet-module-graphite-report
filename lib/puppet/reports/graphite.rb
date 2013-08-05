@@ -20,7 +20,7 @@ Puppet::Reports.register_report(:graphite) do
   ### <puppet_config_dir>/graphite.yaml (/etc/puppet/graphite.yaml by
   ### default).
   @configfile = File.join([File.dirname(Puppet.settings[:config]), "graphite.yaml"])
-  raise(Puppet::ParseError, "Graphite report config file #{@configfile} unreadable!") unless File.exists?(configfile)
+  raise(Puppet::ParseError, "Graphite report config file #{@configfile} unreadable!") unless File.exists?(@configfile)
   config = YAML.load_file(@configfile)
   HOST = config[:host]
   PORT = config[:port]
