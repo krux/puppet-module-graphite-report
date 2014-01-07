@@ -14,7 +14,7 @@ Requirements
 Installation & Usage
 --------------------
 1.  Install `puppet-module-graphite` as a module in your Puppet
-    master's module path (`puppet master --genconfig | 'modulepath ='`)
+    master's module path (`puppet master --genconfig | grep 'modulepath ='` or `puppet config print modulepath`)
 
 2.  Update the `host`, `port`, and `prefix` settings in the
     `<puppet_config_dir>/graphite.yaml` file (example:
